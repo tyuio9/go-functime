@@ -1,7 +1,8 @@
 package functime
 
 import (
-	"log/slog"
+	"fmt"
+	"os"
 	"time"
 )
 
@@ -20,6 +21,6 @@ func Start(function string) *FuncTime {
 func (f *FuncTime) Stop() {
 	stop := time.Since(f.start)
 
-	slog.Debug("function call",
-		"name", f.function, "miliseconds", stop.Milliseconds(), "seconds", stop.Seconds())
+	fmt.Fprintf(os.Stderr, "\n\n function call %q took %d seconds \n\n",
+		f.function, stop.Seconds())
 }
