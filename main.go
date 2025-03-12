@@ -14,7 +14,6 @@ func Start(function string) *FuncTime {
 	return &FuncTime{
 		start:    time.Now(),
 		function: function,
-		log:      log,
 	}
 }
 
