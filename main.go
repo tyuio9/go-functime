@@ -21,6 +21,6 @@ func Start(function string) *FuncTime {
 func (f *FuncTime) Stop() {
 	stop := time.Since(f.start)
 
-	fmt.Fprintf(os.Stderr, "\n\n function call %q took %d seconds \n\n",
+	fmt.Fprintf(os.Stderr, "\n\n function call %q took %f seconds \n\n",
 		f.function, stop.Seconds())
 }
